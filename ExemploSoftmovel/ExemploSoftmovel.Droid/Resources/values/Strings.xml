@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="logar">Logar</string>
+  <string name="Password">Senha:</string>
+  <string name="Email">Email:</string>
+	<string name="app_name">ExemploSoftmovel.Droid</string>
+</resources>
