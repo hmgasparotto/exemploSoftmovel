@@ -17,20 +17,14 @@ namespace ExemploSoftmovel.Database
             database = conn;
 
             database.CreateTable<User>();
+            database.DeleteAll<User>();
 
-            /*User user = database.Find<User>(new User()
+            database.Insert(new User()
             {
-                Name = "Henrique"
+                Name = "Henrique",
+                Email = "hmgasparotto@hotmail.com",
+                Password = "teste"
             });
-            if (user == null)
-            {
-                database.Insert(new User()
-                {
-                    Name = "Henrique",
-                    Email = "hmgasparotto@hotmail.com",
-                    Password = "teste"
-                });
-            }*/
         }
 
         public IEnumerable<User> GetAllUsers()

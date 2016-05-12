@@ -1,4 +1,6 @@
-﻿using Foundation;
+﻿using ExemploSoftmovel.Repository;
+using ExemploSoftmovel.Shared;
+using Foundation;
 using UIKit;
 
 namespace ExemploSoftmovel.iOS
@@ -8,7 +10,8 @@ namespace ExemploSoftmovel.iOS
 	[Register ("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
-		// class-level declarations
+		public static AppDelegate Current { get; set; }
+        public UserRepository repository { get; set; }
 
 		public override UIWindow Window {
 			get;
@@ -17,8 +20,10 @@ namespace ExemploSoftmovel.iOS
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
+            Current = this;
+
+            repository = DatabaseConnection.StartDatabase();
+
 			return true;
 		}
 
