@@ -30,9 +30,12 @@ namespace ExemploSoftmovel.Droid
             EditText txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
 			
-			button.Click += delegate {
-                IEnumerable<User> users = ExemploSoftmovelApp.Current.repository.GetAllUsers()
-                    .Where(u => u.Email == txtEmail.Text && u.Password == txtPassword.Text);
+			button.Click += async delegate {
+                /*IEnumerable<User> users = ExemploSoftmovelApp.Current.repository.GetAllUsers()
+                    .Where(u => u.Email == txtEmail.Text && u.Password == txtPassword.Text);*/
+                //Abre loader
+                IEnumerable<User> users = await ExemploSoftmovelApp.Current.services.GetAllUsersFromApi();
+                users = users.Where(u => u.Email == txtEmail.Text);
                 if (users.Count() > 0)
                 {
                     var intent = new Intent(this, typeof(InitPageActivitycs));

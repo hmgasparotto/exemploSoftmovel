@@ -9,7 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploSoftmovel.iOS", "Exe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploSoftmovel", "ExemploSoftmovel\ExemploSoftmovel\ExemploSoftmovel.csproj", "{6AC23EC8-BB39-4E25-A056-0B4C21FBABCF}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ExemploSoftmovel.Shared", "ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.shproj", "{DEC28059-7A0A-4C10-B722-4045455FE815}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{f15b3a71-d70f-46e0-ba58-aebeda19e46e}*SharedItemsImports = 4
+		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{432744c1-8241-4b87-a2d2-6d1598a83a8f}*SharedItemsImports = 4
+		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{dec28059-7a0a-4c10-b722-4045455fe815}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppStore|Any CPU = AppStore|Any CPU
 		AppStore|iPhone = AppStore|iPhone
