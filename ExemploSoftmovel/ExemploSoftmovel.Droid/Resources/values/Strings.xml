@@ -2,6 +2,9 @@
 <resources>
 	<string name="logar">Logar</string>
   <string name="Password">Senha:</string>
-  <string name="Email">Email:</string>
+  <string name="Email">E-mail:</string>
 	<string name="app_name">ExemploSoftmovel.Droid</string>
+  <string name="ErrorMessage">E-mail ou senha incorretos!</string>
+  <string name="WelcomeMessage">Bem-vindo</string>
+  <string name="CarregarUsuarios">Carregar Usuários</string>
 </resources>

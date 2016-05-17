@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using ExemploSoftmovel.Models;
 using System.Linq;
+using System.Threading;
 
 namespace ExemploSoftmovel.Droid
 {
@@ -24,17 +25,33 @@ namespace ExemploSoftmovel.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.btnLogar);
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button button = FindViewById<Button> (Resource.Id.btnLogar);
             EditText txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+            Button btnCarregar = FindViewById<Button>(Resource.Id.btnCarregar);
+            btnCarregar.Click += delegate
+            {
+                //Carregamento dos dados da API
+                //var dialogAPI = ProgressDialog.Show(this, "Aguarde...", "Carregando usuários...");
+                ExemploSoftmovelApp.Current.repository.InsertAllFromApi();
+                //dialogAPI.Hide();
+            };
 			
-			button.Click += async delegate {
-                /*IEnumerable<User> users = ExemploSoftmovelApp.Current.repository.GetAllUsers()
-                    .Where(u => u.Email == txtEmail.Text && u.Password == txtPassword.Text);*/
+			button.Click += delegate
+            {
+                var dialog = ProgressDialog.Show(this, "Aguarde...", "Buscando usuários...");
+                //Thread.Sleep(1000);
+                //Thread t = new Thread();
+
+                IEnumerable<User> users = ExemploSoftmovelApp.Current.repository.GetAllUsers()
+                    .Where(u => u.Email == txtEmail.Text && u.Password == txtPassword.Text);
                 //Abre loader
-                IEnumerable<User> users = await ExemploSoftmovelApp.Current.services.GetAllUsersFromApi();
+                //IEnumerable<User> users = await ExemploSoftmovelApp.Current.services.GetAllUsersFromApi();
+                //Fecha loader
+                dialog.Hide();
+
                 users = users.Where(u => u.Email == txtEmail.Text);
                 if (users.Count() > 0)
                 {
@@ -44,11 +61,11 @@ namespace ExemploSoftmovel.Droid
                 }
                 else
                 {
-                    Toast.MakeText(this, 
-                        "Email ou senha incorretos!", 
+                    Toast.MakeText(this,
+                        Resources.GetText(Resource.String.ErrorMessage),
                         ToastLength.Short).Show();
                 }
-			};
+            };
 		}
 	}
 }

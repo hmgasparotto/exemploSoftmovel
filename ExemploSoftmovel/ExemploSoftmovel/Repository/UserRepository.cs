@@ -16,6 +16,11 @@ namespace ExemploSoftmovel.Repository
             database = new Database.Database(conn);
         }
 
+        public void InsertAllFromApi()
+        {
+            database.InsertAllFromApi();
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             return database.GetAllUsers();

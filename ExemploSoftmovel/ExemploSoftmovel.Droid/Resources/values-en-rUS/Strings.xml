@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="logar">Login</string>
+  <string name="Password">Password:</string>
+  <string name="Email">Email:</string>
+	<string name="app_name">ExemploSoftmovel.Droid</string>
+  <string name="ErrorMessage">Incorrect email or password!</string>
+  <string name="WelcomeMessage">Welcome</string>
+  <string name="CarregarUsuarios">Load Users</string>
+</resources>

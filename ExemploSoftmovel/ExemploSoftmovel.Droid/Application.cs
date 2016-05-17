@@ -13,7 +13,7 @@ namespace ExemploSoftmovel.Droid
     {
         public static ExemploSoftmovelApp Current { get; set; }
         public UserRepository repository { get; set; }
-        public SoftmovelServices services { get; set; }
+        //public SoftmovelServices services { get; set; }
 
         public ExemploSoftmovelApp(IntPtr handle, JniHandleOwnership owner) : base(handle, owner)
         {
@@ -25,7 +25,7 @@ namespace ExemploSoftmovel.Droid
             base.OnCreate();
 
             repository = DatabaseConnection.StartDatabase();
-            services = new SoftmovelServices();
+            //services = new SoftmovelServices();
         }
     }
 }

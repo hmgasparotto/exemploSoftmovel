@@ -11,6 +11,8 @@ namespace ExemploSoftmovel.Database
     public class Database
     {
         private SQLiteConnection database;
+        static object locker = new object();
+        private Services.SoftmovelServices service;
 
         public Database(SQLiteConnection conn)
         {
@@ -18,29 +20,33 @@ namespace ExemploSoftmovel.Database
 
             database.CreateTable<User>();
 
-            /*User user = database.Find<User>(new User()
+            service = new Services.SoftmovelServices();
+        }
+
+        public async void InsertAllFromApi()
+        {
+            IEnumerable<User> users = await service.GetAllUsersFromApi();
+            foreach (User u in users)
             {
-                Name = "Henrique"
-            });
-            if (user == null)
-            {
-                database.Insert(new User()
-                {
-                    Name = "Henrique",
-                    Email = "hmgasparotto@hotmail.com",
-                    Password = "teste"
-                });
-            }*/
+                u.Password = "";
+                database.Insert(u);
+            }
         }
 
         public IEnumerable<User> GetAllUsers()
         {
-            return database.Table<User>().ToList(); //(from u in database.Table<User>() select u).ToList();
+            lock(locker)
+            {
+                return database.Table<User>().ToList(); //(from u in database.Table<User>() select u).ToList();
+            }
         }
 
         public User GetUserById(int id)
         {
-            return (from u in database.Table<User>() where u.Id == id select u).FirstOrDefault();
+            lock (locker)
+            {
+                return (from u in database.Table<User>() where u.Id == id select u).FirstOrDefault();
+            }
         }
     }
 }

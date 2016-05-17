@@ -60,6 +60,9 @@ namespace ExemploSoftmovel.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050006
+			public const int btnCarregar = 2131034118;
+			
 			// aapt resource value: 0x7f050005
 			public const int btnLogar = 2131034117;
 			
@@ -110,11 +113,20 @@ namespace ExemploSoftmovel.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040006
+			public const int CarregarUsuarios = 2130968582;
+			
 			// aapt resource value: 0x7f040002
 			public const int Email = 2130968578;
 			
+			// aapt resource value: 0x7f040004
+			public const int ErrorMessage = 2130968580;
+			
 			// aapt resource value: 0x7f040001
 			public const int Password = 2130968577;
+			
+			// aapt resource value: 0x7f040005
+			public const int WelcomeMessage = 2130968581;
 			
 			// aapt resource value: 0x7f040003
 			public const int app_name = 2130968579;

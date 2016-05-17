@@ -28,4 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/logar" />
+    <Button
+        android:text="@string/CarregarUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCarregar" />
 </LinearLayout>

@@ -24,7 +24,8 @@ namespace ExemploSoftmovel.Droid
             string nome = Intent.GetStringExtra("Name");
 
             TextView lblMessage = FindViewById<TextView>(Resource.Id.lblMessage);
-            lblMessage.Text = "Bem vindo, " + nome + "!";
+            lblMessage.Text = Resources.GetText(Resource.String.WelcomeMessage)
+                + ", " + nome + "!";
         }
     }
 }
