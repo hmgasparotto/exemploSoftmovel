@@ -30,5 +30,17 @@ namespace ExemploSoftmovel.Repository
         {
             return database.GetUserById(id);
         }
+
+        public User ValidateUser(string email, string senha)
+        {
+            var users = GetAllUsers();
+            users = users.Where(m => m.Email == email && m.Password == senha);
+
+            if (users.Count() > 0)
+            {
+                return users.FirstOrDefault();
+            }
+            return null;
+        }
     }
 }

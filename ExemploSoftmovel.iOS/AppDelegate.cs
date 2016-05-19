@@ -1,4 +1,6 @@
-﻿using Foundation;
+﻿using ExemploSoftmovel.Repository;
+using ExemploSoftmovel.Shared;
+using Foundation;
 using UIKit;
 
 namespace ExemploSoftmovel.iOS
@@ -10,6 +12,8 @@ namespace ExemploSoftmovel.iOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+        public static AppDelegate Current { get; set; }
+        public UserRepository repository { get; set; }
 
         public override UIWindow Window
         {
@@ -21,6 +25,10 @@ namespace ExemploSoftmovel.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+            Current = this;
+
+            repository = DatabaseConnection.StartDatabase();
+            repository.InsertAllFromApi();
 
             return true;
         }
