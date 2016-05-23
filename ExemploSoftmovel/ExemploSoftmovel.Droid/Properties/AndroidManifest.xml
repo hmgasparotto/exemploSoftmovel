@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.android.ExemploSoftmovel" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application>ExemploSoftmovel.Droid.ExemploSoftmovelApp</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.SEND_RESPOND_VIA_MESSAGE" />
+	<application android:label="ExemploSoftmovel">ExemploSoftmovel.Droid.ExemploSoftmovelApp</application>
 </manifest>

@@ -1,14 +1,23 @@
 @model string
 
 <html>
-<body>
+<head>
+    <link href="Style.css" type="text/css" rel="stylesheet" />
+    <style>
+        .label-senha {
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body class="background">
     <form action="softmovel:OpenPage2?">
-        <label>Email</label>
-        <input name="Email" type="text" />
-        <label>Senha</label>
-        <input name="Password" type="text" />
-        <button type="submit">Logar</button>
+        <label class="label">Email</label>
+        <input class="text-box" name="Email" type="text" />
+        <label id="labelSenha" class="label-senha">Senha</label>
+        <input class="text-box" name="Password" type="text" />
+        <button class="button" type="submit">Logar</button>
     </form>
     <br>
+    <a href="softmovel:javascript:document.getElementById('labelSenha').innerHtml = 'Mensagem';?">Chamar Javascript</a>
 </body>
 </html>

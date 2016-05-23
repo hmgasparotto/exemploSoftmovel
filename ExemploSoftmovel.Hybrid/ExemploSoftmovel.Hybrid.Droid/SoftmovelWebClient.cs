@@ -35,11 +35,16 @@ namespace ExemploSoftmovel.Hybrid.Droid
                 {
                     var template = new Page2View() { Model = user };
                     var page = template.GenerateString();
-                    view.LoadDataWithBaseURL("file:///android_assets", page, "text/html", "UTF-8", null);
+                    view.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
                     return true;
                 }
                 else
                     return false;
+            } 
+            else if (method.Contains("javascript:"))
+            {
+                view.LoadUrl(method);
+                return true;
             }
 
             return base.ShouldOverrideUrlLoading(view, url);

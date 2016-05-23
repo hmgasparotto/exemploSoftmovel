@@ -32,17 +32,44 @@ public string Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<html>\r\n<body>\r\n    <form");
+WriteLiteral("<html>\r\n<head>\r\n    <link");
+
+WriteLiteral(" href=\"Style.css\"");
+
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n    <style>\r\n        .label-senha {\r\n            color: antiquewhite;\r\n     " +
+"   }\r\n    </style>\r\n</head>\r\n<body");
+
+WriteLiteral(" class=\"background\"");
+
+WriteLiteral(">\r\n    <form");
 
 WriteLiteral(" action=\"softmovel:OpenPage2?\"");
 
-WriteLiteral(">\r\n        <label>Email</label>\r\n        <input");
+WriteLiteral(">\r\n        <label");
+
+WriteLiteral(" class=\"label\"");
+
+WriteLiteral(">Email</label>\r\n        <input");
+
+WriteLiteral(" class=\"text-box\"");
 
 WriteLiteral(" name=\"Email\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" />\r\n        <label>Senha</label>\r\n        <input");
+WriteLiteral(" />\r\n        <label");
+
+WriteLiteral(" id=\"labelSenha\"");
+
+WriteLiteral(" class=\"label-senha\"");
+
+WriteLiteral(">Senha</label>\r\n        <input");
+
+WriteLiteral(" class=\"text-box\"");
 
 WriteLiteral(" name=\"Password\"");
 
@@ -50,9 +77,16 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" />\r\n        <button");
 
+WriteLiteral(" class=\"button\"");
+
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(">Logar</button>\r\n    </form>\r\n    <br>\r\n</body>\r\n</html>");
+WriteLiteral(">Logar</button>\r\n    </form>\r\n    <br>\r\n    <a");
+
+WriteLiteral(" href=\"softmovel:javascript:document.getElementById(\'labelSenha\').innerHtml = \'Me" +
+"nsagem\';?\"");
+
+WriteLiteral(">Chamar Javascript</a>\r\n</body>\r\n</html>");
 
 }
 }

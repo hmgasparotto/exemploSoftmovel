@@ -28,13 +28,16 @@ namespace ExemploSoftmovel.Hybrid.Droid
             // and attach an event to it
             WebView webView = FindViewById<WebView>(Resource.Id.wvwPage);
             webView.SetWebViewClient(new SoftmovelWebClient());
+            webView.Settings.JavaScriptEnabled = true;
 
             repository = DatabaseConnection.StartDatabase();
             repository.InsertAllFromApi();
 
+            //webView.LoadUrl("javascript:alert('teste');");
+
             var template = new MainView() { Model = "Hello world!" };
             var page = template.GenerateString();
-            webView.LoadDataWithBaseURL("file:///android_assets/", page, "text/html", "UTF-8", null);
+            webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 		}
 	}
 }

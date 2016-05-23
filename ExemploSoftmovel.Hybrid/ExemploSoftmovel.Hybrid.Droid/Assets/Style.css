@@ -1,0 +1,22 @@
+﻿.text-box {
+    width: 100%;
+}
+
+.label {
+    color: blue;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.background {
+    background-color: black;
+}
+
+.button {
+    width: 100%;
+}
+
+.message {
+    font-size: 30px;
+    color: #ffd800;
+}

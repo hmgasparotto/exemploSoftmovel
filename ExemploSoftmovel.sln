@@ -22,6 +22,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{f15b3a71-d70f-46e0-ba58-aebeda19e46e}*SharedItemsImports = 4
+		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{6289edd8-2c95-4fd4-a92b-f6f6d79fdd61}*SharedItemsImports = 4
 		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{59044944-ca5d-42a9-b238-739639863009}*SharedItemsImports = 4
 		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{dec28059-7a0a-4c10-b722-4045455fe815}*SharedItemsImports = 13
 		ExemploSoftmovel.Shared\ExemploSoftmovel.Shared\ExemploSoftmovel.Shared.projitems*{9c86e2ad-66e7-4694-ba35-f38c7a71b302}*SharedItemsImports = 4

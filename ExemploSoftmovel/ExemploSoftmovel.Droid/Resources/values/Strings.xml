@@ -7,4 +7,5 @@
   <string name="ErrorMessage">E-mail ou senha incorretos!</string>
   <string name="WelcomeMessage">Bem-vindo</string>
   <string name="CarregarUsuarios">Carregar Usuários</string>
+  <string name="Enviar">Enviar</string>
 </resources>

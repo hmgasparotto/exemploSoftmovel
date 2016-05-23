@@ -1,7 +1,15 @@
 @model ExemploSoftmovel.Models.User
 <html>
-<body>
-    <input type="Text" name="Name" value="@Model.Name" />
-    <h1>Bem-vindo, @Model.Name!</h1>
+<head>
+    <link href="Style.css" type="text/css" rel="stylesheet" />
+    <style>
+        .label-senha {
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body class="background">
+    <!--<input type="Text" name="Name" value="Model.Name" />-->
+    <h1 class="message">Bem-vindo, @Model.Name!</h1>
 </body>
 </html>

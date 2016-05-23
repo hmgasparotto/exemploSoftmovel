@@ -1,10 +1,10 @@
 ﻿using System;
 using Foundation;
 using UIKit;
-using System.Collections.Generic;
 using ExemploSoftmovel.Models;
 using MultiThreading.Controls;
 using CoreGraphics;
+using System.Threading.Tasks;
 
 namespace ExemploSoftmovel.iOS
 {
@@ -37,7 +37,9 @@ namespace ExemploSoftmovel.iOS
             var senha = this.txtSenha.Text;
 
             var dialog = new LoadingOverlay(new CGRect(0, 0, 100, 200), "Validando usuário...");
-            User user = AppDelegate.Current.repository.ValidateUser(email, senha);
+            View.Add(dialog);
+            User user = null;
+            Task.Run(() => user = AppDelegate.Current.repository.ValidateUser(email, senha));
             dialog.Hide();
 
             if (user != null)

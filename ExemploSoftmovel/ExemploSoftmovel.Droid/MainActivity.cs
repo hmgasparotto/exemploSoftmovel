@@ -12,6 +12,7 @@ using System.IO;
 using ExemploSoftmovel.Models;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ExemploSoftmovel.Droid
 {
@@ -31,32 +32,26 @@ namespace ExemploSoftmovel.Droid
             EditText txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             Button btnCarregar = FindViewById<Button>(Resource.Id.btnCarregar);
-            btnCarregar.Click += delegate
+            btnCarregar.Click += async delegate
             {
                 //Carregamento dos dados da API
-                //var dialogAPI = ProgressDialog.Show(this, "Aguarde...", "Carregando usuários...");
-                ExemploSoftmovelApp.Current.repository.InsertAllFromApi();
-                //dialogAPI.Hide();
+                var dialogAPI = ProgressDialog.Show(this, "Aguarde...", "Carregando usuários...");
+                await Task.Run(() => ExemploSoftmovelApp.Current.repository.InsertAllFromApi());
+                dialogAPI.Hide();
             };
 			
-			button.Click += delegate
+			button.Click += async delegate
             {
                 var dialog = ProgressDialog.Show(this, "Aguarde...", "Buscando usuários...");
-                //Thread.Sleep(1000);
-                //Thread t = new Thread();
 
-                IEnumerable<User> users = ExemploSoftmovelApp.Current.repository.GetAllUsers()
-                    .Where(u => u.Email == txtEmail.Text && u.Password == txtPassword.Text);
-                //Abre loader
-                //IEnumerable<User> users = await ExemploSoftmovelApp.Current.services.GetAllUsersFromApi();
-                //Fecha loader
+                User user = null;
+                await Task.Run(() => user = ExemploSoftmovelApp.Current.repository.ValidateUser(txtEmail.Text, txtPassword.Text));
                 dialog.Hide();
 
-                users = users.Where(u => u.Email == txtEmail.Text);
-                if (users.Count() > 0)
+                if (user != null)
                 {
                     var intent = new Intent(this, typeof(InitPageActivitycs));
-                    intent.PutExtra("Name", users.FirstOrDefault().Name);
+                    intent.PutExtra("Name", user.Name);
                     StartActivity(intent);
                 }
                 else

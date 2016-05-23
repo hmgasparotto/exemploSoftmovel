@@ -32,26 +32,36 @@ public ExemploSoftmovel.Models.User Model { get; set; }
 
 public override void Execute()
 {
-WriteLiteral("<html>\r\n<body>\r\n    <input");
+WriteLiteral("<html>\r\n<head>\r\n    <link");
+
+WriteLiteral(" href=\"Style.css\"");
+
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n    <style>\r\n        .label-senha {\r\n            color: antiquewhite;\r\n     " +
+"   }\r\n    </style>\r\n</head>\r\n<body");
+
+WriteLiteral(" class=\"background\"");
+
+WriteLiteral(">\r\n    <!--<input");
 
 WriteLiteral(" type=\"Text\"");
 
 WriteLiteral(" name=\"Name\"");
 
-WriteAttribute ("value", " value=\"", "\""
+WriteLiteral(" value=\"Model.Name\"");
 
-#line 4 "Page2View.cshtml"
-   , Tuple.Create<string,object,bool> ("", Model.Name
+WriteLiteral(" />-->\r\n    <h1");
 
-#line default
-#line hidden
-, false)
-);
-WriteLiteral(" />\r\n    <h1>Bem-vindo, ");
+WriteLiteral(" class=\"message\"");
+
+WriteLiteral(">Bem-vindo, ");
 
 
-#line 5 "Page2View.cshtml"
-              Write(Model.Name);
+#line 13 "Page2View.cshtml"
+                              Write(Model.Name);
 
 
 #line default
