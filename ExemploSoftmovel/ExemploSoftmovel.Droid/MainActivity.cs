@@ -13,6 +13,8 @@ using ExemploSoftmovel.Models;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Android.Hardware.Usb;
+using Java.Nio;
 
 namespace ExemploSoftmovel.Droid
 {
@@ -61,8 +63,37 @@ namespace ExemploSoftmovel.Droid
                         ToastLength.Short).Show();
                 }
             };
+
+            Button btnPeriferico = FindViewById<Button>(Resource.Id.btnPeriferico);
+            btnPeriferico.Click += delegate {
+                var usbManager = (UsbManager)this.ApplicationContext.GetSystemService(Context.UsbService);
+
+                var usbDevice = usbManager.DeviceList.FirstOrDefault();
+                if (usbDevice.Value == null)
+                { 
+                    return;
+                }
+
+                var usbDeviceKey = usbDevice.Key;
+                var usbDeviceValue = usbDevice.Value; //UsbDevice
+
+                if (!usbManager.HasPermission(usbDeviceValue))
+                {
+                    usbManager.RequestPermission(usbDeviceValue, null);
+                }
+
+                var usbDeviceConnection = usbManager.OpenDevice(usbDeviceValue);
+
+                using (var usbInterface = usbDeviceValue.GetInterface(0))
+                {
+                    using (var usbEndpoint = usbInterface.GetEndpoint(0))
+                    {
+                        UsbRequest usbRequest = new UsbRequest();
+                        usbRequest.Queue((ByteBuffer)new byte[] { 1, 2, 3, 4 }, 4);
+                        //usbDeviceConnection.BulkTransfer(usbEndpoint, new byte[] { 1, 2, 3, 4, 5 }, 5, 60000);
+                    }
+                }
+            };
 		}
 	}
 }
-
-

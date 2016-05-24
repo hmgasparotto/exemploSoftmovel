@@ -60,29 +60,35 @@ namespace ExemploSoftmovel.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int btnCarregar = 2131034120;
+			// aapt resource value: 0x7f050009
+			public const int btnCarregar = 2131034121;
 			
 			// aapt resource value: 0x7f050002
 			public const int btnEnviar = 2131034114;
 			
-			// aapt resource value: 0x7f050007
-			public const int btnLogar = 2131034119;
-			
 			// aapt resource value: 0x7f050003
-			public const int lblEmail = 2131034115;
+			public const int btnEnviarSMS = 2131034115;
+			
+			// aapt resource value: 0x7f050008
+			public const int btnLogar = 2131034120;
+			
+			// aapt resource value: 0x7f05000a
+			public const int btnPeriferico = 2131034122;
+			
+			// aapt resource value: 0x7f050004
+			public const int lblEmail = 2131034116;
 			
 			// aapt resource value: 0x7f050000
 			public const int lblMessage = 2131034112;
 			
-			// aapt resource value: 0x7f050005
-			public const int lblPassword = 2131034117;
-			
-			// aapt resource value: 0x7f050004
-			public const int txtEmail = 2131034116;
-			
 			// aapt resource value: 0x7f050006
-			public const int txtPassword = 2131034118;
+			public const int lblPassword = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int txtEmail = 2131034117;
+			
+			// aapt resource value: 0x7f050007
+			public const int txtPassword = 2131034119;
 			
 			// aapt resource value: 0x7f050001
 			public const int txtTextoEmail = 2131034113;
@@ -127,6 +133,9 @@ namespace ExemploSoftmovel.Droid
 			
 			// aapt resource value: 0x7f040007
 			public const int Enviar = 2130968583;
+			
+			// aapt resource value: 0x7f040008
+			public const int EnviarSMS = 2130968584;
 			
 			// aapt resource value: 0x7f040004
 			public const int ErrorMessage = 2130968580;

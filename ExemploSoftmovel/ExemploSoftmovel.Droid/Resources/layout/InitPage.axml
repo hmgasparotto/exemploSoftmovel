@@ -14,11 +14,16 @@
     <EditText
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
-        android:layout_height="445.5dp"
+        android:layout_height="176.0dp"
         android:id="@+id/txtTextoEmail" />
     <Button
         android:text="@string/Enviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnEnviar" />
+    <Button
+        android:text="@string/EnviarSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEnviarSMS" />
 </LinearLayout>

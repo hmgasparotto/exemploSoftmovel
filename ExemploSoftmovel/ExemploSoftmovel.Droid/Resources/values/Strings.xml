@@ -8,4 +8,5 @@
   <string name="WelcomeMessage">Bem-vindo</string>
   <string name="CarregarUsuarios">Carregar Usuários</string>
   <string name="Enviar">Enviar</string>
+  <string name="EnviarSMS">Enviar SMS</string>
 </resources>

@@ -7,4 +7,6 @@
   <string name="ErrorMessage">Incorrect email or password!</string>
   <string name="WelcomeMessage">Welcome</string>
   <string name="CarregarUsuarios">Load Users</string>
+  <string name="EnviarSMS">Send SMS</string>
+  <string name="Enviar">Send</string>
 </resources>
