@@ -6,12 +6,18 @@ using MultiThreading.Controls;
 using CoreGraphics;
 using System.Threading.Tasks;
 using MessageUI;
+using MapKit;
+using CoreLocation;
+using CoreBluetooth;
+using CoreFoundation;
 
 namespace ExemploSoftmovel.iOS
 {
     public partial class ViewController : UIViewController
     {
         public string Name { get; set; }
+
+        private CBPeripheral peripheral;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -21,6 +27,37 @@ namespace ExemploSoftmovel.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            CBCentralManager bluetoothManager = new CBCentralManager(new SoftmovelCentralManagerDelegate(), DispatchQueue.CurrentQueue);
+
+            bluetoothManager.ConnectedPeripheral += (s, e) => {
+                peripheral = e.Peripheral;
+                peripheral.Delegate = new SoftmovelPeripheralDelegate();
+
+                foreach(CBService service in peripheral.Services)
+                {
+                    //service.
+                }
+            };
+
+            bluetoothManager.ConnectPeripheral(peripheral);
+
+            CLLocationManager manager = new CLLocationManager();
+            manager.RequestAlwaysAuthorization();
+
+            CLCircularRegion region = new CLCircularRegion(new CLLocationCoordinate2D(-30.0, -51.0), 1000, "Região circular");
+            manager.RegionEntered += delegate 
+            {
+                new UIAlertView("Entrou na região!", "", null, "OK", null).Show();
+            };
+            manager.RegionLeft += delegate 
+            {
+                new UIAlertView("Saiu da região!", "", null, "OK", null).Show();
+            };
+            if (CLLocationManager.IsMonitoringAvailable(typeof(CLCircularRegion)))
+                manager.StartMonitoring(region);
+
+            map.ShowsUserLocation = true;
 
             UIButton btnEnviar = new UIButton(new CGRect(0, 200, 100, 40));
             btnLogar.TouchUpInside += delegate {

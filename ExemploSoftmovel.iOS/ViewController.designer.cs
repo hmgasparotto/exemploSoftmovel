@@ -28,6 +28,10 @@ namespace ExemploSoftmovel.iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		MapKit.MKMapView map { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField txtEmail { get; set; }
 
 		[Outlet]
@@ -47,6 +51,10 @@ namespace ExemploSoftmovel.iOS
 			if (lblSenha != null) {
 				lblSenha.Dispose ();
 				lblSenha = null;
+			}
+			if (map != null) {
+				map.Dispose ();
+				map = null;
 			}
 			if (txtEmail != null) {
 				txtEmail.Dispose ();

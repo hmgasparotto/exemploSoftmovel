@@ -60,6 +60,9 @@ namespace ExemploSoftmovel.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05000c
+			public const int btnBluetooth = 2131034124;
+			
 			// aapt resource value: 0x7f050009
 			public const int btnCarregar = 2131034121;
 			
@@ -68,6 +71,9 @@ namespace ExemploSoftmovel.Droid
 			
 			// aapt resource value: 0x7f050003
 			public const int btnEnviarSMS = 2131034115;
+			
+			// aapt resource value: 0x7f05000b
+			public const int btnLocation = 2131034123;
 			
 			// aapt resource value: 0x7f050008
 			public const int btnLogar = 2131034120;

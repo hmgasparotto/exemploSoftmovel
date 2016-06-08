@@ -65,6 +65,9 @@
                                     <segue id="740" destination="15" kind="show" identifier="mainTo2"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="745" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="9" y="387" width="392" height="329"/>
+                            </mapView>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
@@ -91,6 +94,7 @@
                         <outlet property="lblSenha" destination="9" id="name-outlet-9"/>
                         <outlet property="txtSenha" destination="10" id="name-outlet-10"/>
                         <outlet property="btnLogar" destination="11" id="name-outlet-11"/>
+                        <outlet property="map" destination="745" id="name-outlet-745"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

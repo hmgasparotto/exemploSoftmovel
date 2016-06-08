@@ -49,5 +49,7 @@
 		<string>pt</string>
 		<string>en</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 </dict>
 </plist>

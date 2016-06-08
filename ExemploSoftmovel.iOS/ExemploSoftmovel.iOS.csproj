@@ -103,6 +103,8 @@
     <BundleResource Include="Resources\pt.lproj\Main.strings" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SoftmovelCentralManagerDelegate.cs" />
+    <Compile Include="SoftmovelPeripheralDelegate.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
